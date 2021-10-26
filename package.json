@@ -6,7 +6,6 @@
   "scripts": {
     "build": "tsc",
     "test": "tsc && jest build",
-    "testTS": "jest src",
     "getPrices": "npm run build && node build/index.js"
   },
   "author": "Clara Sternberg <csternberg@middlebury.edu>",

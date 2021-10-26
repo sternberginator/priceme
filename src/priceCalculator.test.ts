@@ -2,7 +2,7 @@ import { priceCalculator } from '../build/priceCalculator';
 
 describe('priceCalculator', () => {
     describe('given a commodity with existing price data', () => {
-        it('should return price information', () => {
+        it('should return price information sorted by total cost descending', () => {
             const res = priceCalculator({
                 commodity: 'orange',
                 tons: 10,
@@ -20,6 +20,16 @@ describe('priceCalculator', () => {
                 fixedOverhead: 15,
                 totalCost: 130,
             });
+        });
+    });
+    describe('given a commodity with no price data', () => {
+        it('should return an empty array', () => {
+            const res = priceCalculator({
+                commodity: 'pear',
+                tons: 10,
+                pricePerTon: 10,
+            });
+            expect(res).toHaveLength(0);
         });
     });
 });
