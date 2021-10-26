@@ -27,7 +27,7 @@ try {
 
 const formatDollars = (num: number): string => `$${Number(num).toFixed(2)}`;
 
-console.log('Country\tTotal Cost\tCost breakdown');
+console.log('Country\tTotal cost\tCost breakdown');
 console.log(prices.map((p) => {
     const breakdown = `(${formatDollars(p.pricePerTon)}/ton * ${userInput.tons} tons) + ${formatDollars(p.fixedOverhead)}`;
     return `${p.countryCode}\t${formatDollars(p.totalCost)}\t${breakdown}`;
