@@ -1,6 +1,4 @@
-const {
-    priceCalculator,
-} = require('../build/priceCalculator');
+import { priceCalculator } from '../build/priceCalculator';
 
 const USAGE = `
 usage: node index.ts <commodity> <tons> <price per ton>
@@ -20,7 +18,6 @@ const userInput = {
 };
 
 const prices = priceCalculator(userInput);
-prices.sort((a, b) => b.totalCost - a.totalCost);
 
 const round = (num: number): string => Number(num).toFixed(2);
 

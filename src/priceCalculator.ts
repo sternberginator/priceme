@@ -1,4 +1,8 @@
-const data = require('../data/example.json');
+const fs = require('fs');
+const path = require('path');
+
+const raw = fs.readFileSync(path.join(__dirname, '../data/example.json'));
+const data = JSON.parse(raw);
 
 interface UserInput {
     commodity: string,
@@ -17,7 +21,7 @@ export const priceCalculator = ({
     tons,
     pricePerTon,
 }: UserInput): ComputedCountryPrice[] => {
-    return data.filter((d) => d.COMMODITY_NAME === commodity).map((d) => {
+    const res = data.filter((d) => d.COMMODITY_NAME === commodity).map((d) => {
         const fixedOverhead = Number(d.FIXED_OVERHEAD);
         const adjustedPricePerTon = pricePerTon + Number(d.VAR_OVERHEAD);
         return {
@@ -27,4 +31,6 @@ export const priceCalculator = ({
             totalCost: adjustedPricePerTon * tons + fixedOverhead,
         };
     });
+    res.sort((a, b) => b.totalCost - a.totalCost);
+    return res;
 };

@@ -10,5 +10,41 @@
         "COMMODITY_NAME": "lemon",
         "FIXED_OVERHEAD": "20.00",
         "VAR_OVERHEAD": "1.42"
+    },
+    {
+        "COUNTRY": "FR",
+        "COMMODITY_NAME": "lemon",
+        "FIXED_OVERHEAD": "24.50",
+        "VAR_OVERHEAD": "1.45"
+    },
+    {
+        "COUNTRY": "IN",
+        "COMMODITY_NAME": "orange",
+        "FIXED_OVERHEAD": "25.00",
+        "VAR_OVERHEAD": "1.00"
+    },
+    {
+        "COUNTRY": "FR",
+        "COMMODITY_NAME": "orange",
+        "FIXED_OVERHEAD": "15.00",
+        "VAR_OVERHEAD": "1.50"
+    },
+    {
+        "COUNTRY": "HN",
+        "COMMODITY_NAME": "lime",
+        "FIXED_OVERHEAD": "22.00",
+        "VAR_OVERHEAD": "1.90"
+    },
+    {
+        "COUNTRY": "CH",
+        "COMMODITY_NAME": "lime",
+        "FIXED_OVERHEAD": "18.40",
+        "VAR_OVERHEAD": "1.26"
+    },
+    {
+        "COUNTRY": "CH",
+        "COMMODITY_NAME": "lemon",
+        "FIXED_OVERHEAD": "17.85",
+        "VAR_OVERHEAD": "1.31"
     }
 ]

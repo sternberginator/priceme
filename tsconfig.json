@@ -4,8 +4,11 @@
     "lib": ["es6"],
     "module": "commonjs",
     "rootDir": "src",
-    "allowJs": true,
     "outDir": "build",
     "esModuleInterop": true
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "**/*.config.js"
+  ]
 }
