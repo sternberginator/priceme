@@ -22,7 +22,7 @@ const userInput = {
 const prices = priceCalculator(userInput);
 prices.sort((a, b) => b.totalCost - a.totalCost);
 
-const round = (num, dec = 2) => Math.round((num + Number.EPSILON) * (10 ** dec)) / (10 ** dec);
+const round = (num: number): string => Number(num).toFixed(2);
 
 console.log(prices.map((p) => {
     const breakdown = `($${p.pricePerTon}/ton * ${userInput.tons} tons) + $${p.fixedOverhead}`;

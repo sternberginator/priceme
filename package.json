@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "getPrices": "tsc && node src/index.ts"
+    "getPrices": "tsc && node build/index.js"
   },
   "author": "Clara Sternberg <csternberg@middlebury.edu>",
   "license": "Apache-2.0",
