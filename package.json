@@ -1,0 +1,11 @@
+{
+  "name": "priceme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Clara Sternberg <csternberg@middlebury.edu>",
+  "license": "Apache-2.0"
+}
