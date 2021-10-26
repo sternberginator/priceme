@@ -32,4 +32,30 @@ describe('priceCalculator', () => {
             expect(res).toHaveLength(0);
         });
     });
+    describe('given invalid input', () => {
+        it('should throw an error if pricePerTon is NaN', () => {
+            expect.assertions(1);
+            try {
+                const res = priceCalculator({
+                    commodity: 'orange',
+                    tons: 10,
+                    pricePerTon: Number('a'),
+                });
+            } catch (err) {
+                expect(err.message).toBeDefined();
+            }
+        });
+        it('should throw an error if tons is NaN', () => {
+            expect.assertions(1);
+            try {
+                const res = priceCalculator({
+                    commodity: 'orange',
+                    tons: Number('b'),
+                    pricePerTon: 20,
+                });
+            } catch (err) {
+                expect(err.message).toBeDefined();
+            }
+        });
+    });
 });

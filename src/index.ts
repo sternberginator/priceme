@@ -17,11 +17,18 @@ const userInput = {
     pricePerTon: Number(args[2]),
 };
 
-const prices = priceCalculator(userInput);
+let prices;
+try {
+    prices = priceCalculator(userInput);
+} catch (err) {
+    console.log(`${err.message}\n`);
+    process.exit(1);
+}
 
-const round = (num: number): string => Number(num).toFixed(2);
+const formatDollars = (num: number): string => `$${Number(num).toFixed(2)}`;
 
+console.log('Country\tTotal Cost\tCost breakdown');
 console.log(prices.map((p) => {
-    const breakdown = `($${p.pricePerTon}/ton * ${userInput.tons} tons) + $${p.fixedOverhead}`;
-    return `${p.countryCode}: $${round(p.totalCost)} | ${breakdown}`;
+    const breakdown = `(${formatDollars(p.pricePerTon)}/ton * ${userInput.tons} tons) + ${formatDollars(p.fixedOverhead)}`;
+    return `${p.countryCode}\t${formatDollars(p.totalCost)}\t${breakdown}`;
 }).join('\n'));

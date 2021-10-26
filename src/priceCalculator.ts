@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const raw = fs.readFileSync(path.join(__dirname, '../data/example.json'));
+const raw = fs.readFileSync(path.join(__dirname, '..', 'data', 'example.json'));
 const data = JSON.parse(raw);
 
 interface UserInput {
@@ -21,6 +21,9 @@ export const priceCalculator = ({
     tons,
     pricePerTon,
 }: UserInput): ComputedCountryPrice[] => {
+    if (Number.isNaN(tons) || Number.isNaN(pricePerTon)) {
+        throw new Error('Tonnage and price per ton must be numbers');
+    }
     const res = data.filter((d) => d.COMMODITY_NAME === commodity).map((d) => {
         const fixedOverhead = Number(d.FIXED_OVERHEAD);
         const adjustedPricePerTon = pricePerTon + Number(d.VAR_OVERHEAD);
