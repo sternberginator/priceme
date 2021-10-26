@@ -1,9 +1,9 @@
 const {
     priceCalculator,
-} = require('./src/priceCalculator');
+} = require('../build/priceCalculator');
 
 const USAGE = `
-usage: node index.js <commodity> <tons> <price per ton>
+usage: node index.ts <commodity> <tons> <price per ton>
 `;
 
 const args = process.argv.slice(2);
